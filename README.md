@@ -24,21 +24,33 @@ interview that the agent runs with you.
 
 ## Start here
 
-If you want to see what a populated system looks like before you begin, open
-[`examples/morgan-hale/`](examples/morgan-hale/README.md): a fictional mid-level workplace-operations
-search with a filled truth layer, gate, pipeline, contacts, and one tailored application,
-including the real output of the four scripts.
+**New to this, or to Claude Code? Read [SETUP.md](SETUP.md).** It covers what it costs, how to
+make your own private copy, installing Claude Code in the terminal or the desktop app, and your
+first session, written for someone who is not a developer.
 
-1. **Use this repository as a template, and keep your copy private.** `profile/` and
-   `applications/` will hold your employment history, compensation targets, and every
-   application you send. Do not run this in a public fork.
-2. Open the folder in Claude Code (CLI, desktop app, or IDE extension). Say:
-   *"Read CLAUDE.md and INTAKE.md and let's begin intake."*
-3. The agent runs Session Zero (tooling check) and then the intake interview. Expect more
-   than one session. The screening gate stays blocked until `profile/target_roles.md`
-   has a real compensation floor.
+The short version:
+
+1. Click **Use this template** at the top of this page, then **Create a new repository**, and
+   **select Private**. Do not fork: forks of public repositories are permanently public, and
+   this one will hold your salary history and every application you send.
+2. Get the folder onto your computer, then open it in Claude Code (terminal or the desktop
+   app's Code tab, Environment set to Local).
+3. Say: *"Read CLAUDE.md and INTAKE.md and let's begin intake."*
+
+The agent runs an environment check, then the intake interview. Expect more than one session.
+The screening gate stays blocked until `profile/target_roles.md` has a real compensation floor.
+
+If you want to see what a populated system looks like first, open
+[`examples/morgan-hale/`](examples/morgan-hale/README.md): a fictional mid-level
+workplace-operations search with a filled truth layer, gate, pipeline, contacts, and one
+tailored application, including the real output of the four scripts.
+
+Claude Code requires a paid plan (Pro, Max, Team, Enterprise, or Console credits). The free
+Claude.ai plan cannot run it.
 
 ### Prerequisites
+
+A paid Claude plan, plus:
 
 - Python 3.10+ (no packages to install)
 - git
@@ -50,8 +62,8 @@ including the real output of the four scripts.
   renderer falls back to Calibri, then Helvetica/Arial. The intake makes you check which
   font actually rendered so the fallback is a choice, not an accident.
 
-Developed and tested on macOS. Linux should work with `CHROME_PATH` set; Windows is
-untested.
+Developed and tested on macOS. Linux should work with `CHROME_PATH` set. Windows is untested,
+though Claude Code itself runs there; [SETUP.md](SETUP.md) covers the Windows install path.
 
 ## Why it looks the way it does
 

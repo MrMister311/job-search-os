@@ -21,7 +21,9 @@ failures as they appear:
    Commits should be theirs, from a personal account, never a work one.
 3. **Private repository.** This folder will hold employment history, compensation targets,
    and every application sent. If it is pushed anywhere, the remote must be private.
-   Confirm with `git remote -v` and the hosting provider's visibility setting.
+   Confirm with `git remote -v` and the hosting provider's visibility setting. If the owner
+   forked rather than using the template button, the copy is permanently public and must be
+   recreated; see `SETUP.md`.
 4. **Google Chrome or Chromium**: the PDF renderer drives it headless. If the browser is
    not in a standard location, set `CHROME_PATH` to the binary.
 5. **poppler** (`pdfinfo` + `pdftotext`, used for page counts and the ATS check):

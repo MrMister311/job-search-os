@@ -1,0 +1,219 @@
+# Setup
+
+For someone comfortable with a computer who is not a developer. You do not need to know how to
+code. You will copy and paste a few commands.
+
+Verified against Anthropic's documentation on 2026-08-21. Links and menu labels change; if
+something does not match, the official docs at https://code.claude.com/docs are the authority.
+
+---
+
+## Before you start: what this costs
+
+**Claude Code is not free.** The free Claude.ai plan cannot run it. You need one of:
+
+- A **Claude Pro** subscription (the usual choice)
+- **Claude Max** (same Claude Code features as Pro, higher usage limits)
+- Team or Enterprise, if your workplace provides it, though see the privacy note below
+- A **Console account** with prepaid API credits, billed per use
+
+Pro and Max are identical in what Claude Code can *do*. The difference is how much you can use
+before hitting limits. Start with Pro.
+
+**Use a personal account, not a work one.** This repository will hold your employment history,
+compensation targets, and every application you send. Your employer should not be able to see
+any of it.
+
+You also need:
+
+- A **GitHub account** (free) at https://github.com
+- **git** installed. On a Mac it usually already is. On Windows, install Git for Windows from
+  https://git-scm.com, which is required for local sessions on Windows.
+- macOS 13 or later, or Windows 10 (1809) or later
+
+---
+
+## Step 1: Make your own private copy
+
+**Do not fork this repository.** A fork of a public repository is permanently public and cannot
+be made private later. Your job search would be visible to anyone, including your employer.
+
+Instead:
+
+1. Go to https://github.com/MrMister311/job-search-os
+2. Click the green **Use this template** button, then **Create a new repository**
+3. Name it whatever you like, for example `my-job-search`
+4. **Select Private.** This is the important step
+5. Click **Create repository**
+
+You now have your own private copy with its own history. Nothing you write in it is connected
+back to the original.
+
+### Get it onto your computer
+
+**If you are comfortable with a terminal**, open Terminal (Mac: press Cmd+Space, type
+"Terminal") or PowerShell (Windows: press Start, type "PowerShell"), then run this, replacing
+`YOUR-USERNAME` and `my-job-search`:
+
+```
+cd ~
+git clone https://github.com/YOUR-USERNAME/my-job-search.git
+```
+
+**If you would rather not use a terminal**, install GitHub Desktop from
+https://desktop.github.com, sign in, and use **File > Clone repository** to pick the repository
+you just created. Note where it saves the folder.
+
+---
+
+## Step 2: Install Claude Code
+
+Two ways to run it. Pick one. The desktop app is easier if terminals make you uneasy; the
+terminal version has a few extra features you will probably never need.
+
+### Option A: The Claude desktop app (recommended for beginners)
+
+1. Download and install Claude for Mac or Windows from https://claude.ai/download
+2. Open it and sign in with your Claude account
+3. Click the **Code** tab at the top
+4. Set **Environment** to **Local**
+5. Click **Select folder** and choose the folder from Step 1
+6. Pick a permission mode. **Accept edits** is a reasonable start. It applies file changes
+   without asking each time, which matters because this system writes a lot of files
+7. Type your first instruction (see Step 3) and press Enter
+
+The desktop app runs the same engine as the terminal version and reads the same
+`CLAUDE.md` instructions, so everything in this repository works identically.
+
+### Option B: The terminal
+
+Open Terminal (Mac) or PowerShell (Windows) and run:
+
+**Mac or Linux:**
+```
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows PowerShell:**
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+Then check it worked:
+```
+claude --version
+```
+
+If that prints a version number, you are set. If the command is not found, close and reopen
+your terminal first.
+
+Now move into your project folder and start it:
+
+```
+cd ~/my-job-search
+claude
+```
+
+**Always `cd` into the project folder before running `claude`.** If you run it from your home
+folder instead, it will ask you to confirm trust every single time and will not remember.
+
+The first time, it will open a browser to sign in, then ask whether you trust the folder. Say
+yes. In your very first session it asks permission before every change; after that it settles
+into its normal mode.
+
+---
+
+## Step 3: Your first session
+
+Whichever way you started it, type this:
+
+```
+Read CLAUDE.md and INTAKE.md and let's begin intake.
+```
+
+That is the whole trigger. It will run an environment check first, confirming Python, git,
+Chrome, and the PDF tools are present, then start interviewing you about your work history.
+
+**Expect intake to take more than one sitting.** It is building a verified record of your
+career, and it will push back on numbers you cannot explain. That is the point.
+
+Before you start, gather:
+
+- Every old resume you can find
+- Performance reviews or any written assessment from a manager
+- Your LinkedIn profile as it stands now
+- A rough sense of your target: titles, minimum salary, where you will and will not work
+
+If you want to see what a finished system looks like first, open
+[`examples/morgan-hale/`](examples/morgan-hale/README.md). It is a complete fictional example.
+
+---
+
+## Step 4: Everyday use
+
+Start a session the same way each time: open the folder in the desktop app's Code tab, or
+`cd` into it and run `claude`.
+
+A good opening line for any later session:
+
+```
+Read CLAUDE.md and the latest session log entry, then tell me what needs doing.
+```
+
+Commands worth knowing, typed inside a session:
+
+| Command | What it does |
+|---|---|
+| `/help` | Lists everything available |
+| `/` | Type just a slash to see all commands |
+| `/clear` | Starts a fresh conversation, keeping the files |
+| `/usage` | Shows how much of your plan you have used |
+| `/exit` | Ends the session |
+
+In the terminal only:
+
+| Command | What it does |
+|---|---|
+| `claude -c` | Continues your most recent conversation in this folder |
+| `claude -r` | Picks an older conversation to resume |
+| `claude doctor` | Checks your installation if something seems broken |
+
+---
+
+## Keeping it private
+
+Three rules.
+
+1. **The repository stays private.** Check it at any time: on GitHub, your repository page shows
+   "Private" next to the name. If it says Public, go to Settings, scroll to the bottom, and
+   change it.
+2. **Work in local sessions.** The desktop app also offers Cloud sessions, and there is a
+   web version at claude.ai/code. Those run on Anthropic's servers rather than your machine,
+   and cloud sessions can be shared publicly by accident. Anthropic's own documentation warns
+   to check for sensitive content before sharing a session. This repository holds your salary
+   history and personal details, so keep it local.
+3. **Personal account, personal machine.** Not a work laptop, not a work Claude account, not a
+   work GitHub organization.
+
+---
+
+## If something goes wrong
+
+**"claude: command not found"** after installing: close and reopen your terminal. If it still
+fails, run the installer again and read what it prints about your PATH.
+
+**It asks about trusting the folder every time:** you are running `claude` from your home
+folder. `cd` into the project folder first.
+
+**"Claude Code requires a Pro, Max, Team, or Enterprise subscription":** the free plan does not
+include Claude Code. See the top of this page.
+
+**The resume PDF renders in the wrong font:** the design uses Aptos, which comes with Microsoft
+Word. Without Word it silently falls back to Calibri, then Helvetica or Arial. Intake walks you
+through checking this so the fallback is a decision rather than an accident.
+
+**A script fails with "command not found: pdftotext":** install poppler. On a Mac,
+`brew install poppler`. On Ubuntu or Debian, `sudo apt install poppler-utils`.
+
+**Anything else:** describe it to Claude in the session. It has this repository's full context
+and can usually diagnose its own environment.
