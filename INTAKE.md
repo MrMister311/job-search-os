@@ -48,6 +48,12 @@ failures as they appear:
 Session Zero is done when a test PDF rendered in the intended font, the checks all pass,
 and the repo has the owner's git identity on a first commit.
 
+## What is in profile/ before you begin
+
+Read `profile/README.md` once. It lists which files exist now and which get created during
+intake, so neither the owner nor the agent goes looking for something that is not supposed
+to be there yet.
+
 ## Before starting, the owner gathers
 
 - Every old resume they can find (they go in `/archive/`, and they are *evidence, not truth*)
