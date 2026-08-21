@@ -34,9 +34,22 @@ import sys
 YEAR = re.compile(r"^(19|20)\d\d$")
 NUM = re.compile(r"(?<![\w.])(\$?\d[\d,]*(?:\.\d+)?)\s?(%|[KkMmBb]\b|x\b|\+)?")
 IGNORE_BEFORE = re.compile(
-    r"(?:\b(?:SOC|ISO|IEC|PCI|NIST|CIS|HIPAA|Type|Tier|Level|Layer|Series|Version|v|Windows|"
-    r"Office|Microsoft|M|O|Phase|Step|Round|Q|FY|H|Gen|Web|Wi-?Fi|802\.11\w*|Top|Page|Chapter)"
+    r"(?:\b(?:SOC|ISO|IEC|PCI|NIST|CIS|HIPAA|FDA|OSHA|GAAP|Type|Tier|Level|Layer|Series|"
+    r"Version|v|Windows|Office|Microsoft|M|O|Phase|Step|Round|Q|FY|H|Gen|Web|Wi-?Fi|"
+    r"802\.11\w*|Top|Page|Chapter|Section|Article|Rule|Form|Route|Fortune|Formula|Title|"
+    r"Grade|Class|Building|Suite|Room|Floor|Ward|Gate|Track|Model|Figure|Table|Exhibit|"
+    r"Appendix|Schedule|Part|Unit|Site|Zone|Band|Group|Cohort|Wave|Sprint|Week|Day|Year)"
     r"\s?$)", re.I)
+
+# Tokens that contain digits but are not claims. Blanked before scanning.
+NOISE = [
+    re.compile(r"\b\d{1,2}/\d{1,2}(?!\d)"),          # 24/7, 9/5
+    re.compile(r"\b[A-Za-z][A-Za-z.&\-]*-\d+\w*"),     # COVID-19, IR-2026, T-4, ISO-9001
+    re.compile(r"\b\d+(?:st|nd|rd|th)\b", re.I),       # 4th, 21st
+    re.compile(r"\b(?:24x7|24/7|9to5|9-to-5)\b", re.I),
+    re.compile(r"\bK-\d+\b", re.I),                    # K-12
+    re.compile(r"\b\d+(?:am|pm)\b", re.I),
+]
 TARGET_WORDS = re.compile(
     r"\b(goal|goals|target|targeted|targeting|aim|aimed|aiming|intend|intended|plan to|planned to|"
     r"on track|projected|projection|forecast|expected to|anticipate|anticipated|hope to|slated)\b", re.I)
@@ -56,9 +69,33 @@ def to_value(raw, suffix):
     return v
 
 
+def load_ignores(path="profile/claims_ignore.txt"):
+    """Optional owner-maintained allowlist: one literal token or /regex/ per line, # comments.
+
+    Exists so recurring false positives can be silenced once instead of teaching the owner to
+    ignore the whole check. Entries are matched against the raw token (e.g. "4.8") or, for
+    /regex/ entries, against the whole line."""
+    lits, rxs = set(), []
+    if os.path.exists(path):
+        for raw in open(path, encoding="utf-8"):
+            line = raw.split("#")[0].strip()
+            if not line:
+                continue
+            if len(line) > 2 and line.startswith("/") and line.endswith("/"):
+                try:
+                    rxs.append(re.compile(line[1:-1]))
+                except re.error:
+                    print(f"   ! bad regex in {path}, skipped: {line}")
+            else:
+                lits.add(line)
+    return lits, rxs
+
+
 def numbers_in(text):
-    """Yield (value, raw_token, line_no, line) for every standalone figure in text."""
+    """Yield (value, raw_token, line_no, line, window) for every standalone figure in text."""
     text = re.sub(r"https?://\S+|www\.\S+|\S+@\S+", " ", text)
+    for pat in NOISE:
+        text = pat.sub(lambda m: " " * len(m.group(0)), text)
     for ln, line in enumerate(text.split("\n"), 1):
         for m in NUM.finditer(line):
             raw, suf = m.group(1), m.group(2) or ""
@@ -169,11 +206,15 @@ def main():
     if not os.path.exists(a.skills):
         sys.exit(f"   ✗ truth anchor not found: {a.skills} (run from the repo root, or pass --skills)")
     present, cleared = skills_values(open(a.skills, encoding="utf-8").read())
+    ign_lits, ign_rxs = load_ignores()
     if not present:
         print(f"   ! {a.skills} contains no figures yet; every number below is MISSING until intake fills it")
     seen = set()
-    missing = uncleared = anchored = 0
+    missing = uncleared = anchored = ignored = 0
     for v, raw, ln, line, window in numbers_in(body_of(doc)):
+        if raw in ign_lits or any(r.search(line) for r in ign_rxs):
+            ignored += 1
+            continue
         key = (v, raw)
         tag = "ANCHORED" if v in cleared else ("UNCLEARED" if v in present else "MISSING")
         if key not in seen:
@@ -189,7 +230,12 @@ def main():
         tw = TARGET_WORDS.search(window)
         if tw:
             print(f"   ! target language near {raw} (line {ln}): \"{tw.group(0)}\" -- a target is not an outcome")
-    print(f"   numbers: {anchored} anchored, {uncleared} uncleared, {missing} missing")
+    tail = f", {ignored} ignored by profile/claims_ignore.txt" if ignored else ""
+    print(f"   numbers: {anchored} anchored, {uncleared} uncleared, {missing} missing{tail}")
+    if missing:
+        print("   ^ a MISSING figure is either a claim with no evidence (fix the resume) or a")
+        print("     real fact not yet in the anchor (add it through the metrics gate). If it is")
+        print("     neither, add the token to profile/claims_ignore.txt so it stops asking.")
 
     # ---- titles and dates
     if os.path.exists(a.history):

@@ -109,7 +109,10 @@ are the owner's. Do not screen a single role until `target_roles.md` exists.
   `python3 scripts/ats_check.py <resume.pdf> <jd.md> "<Job Title>"` (text-layer extraction,
   JD keyword coverage, job-title alignment, title match is a heavy ATS/recruiter-search
   signal; coverage is information, never a stuffing target) and
-  `python3 scripts/bullet_lint.py <resume.md>`. Finally the **LLM-summary sanity check**
+  `python3 scripts/bullet_lint.py <resume.md>`. A figure the claims checker calls MISSING is
+  either an unsupported claim (fix the document) or a real fact not yet in the anchor (add it
+  through the metrics gate). Only when it is neither does it belong in
+  `profile/claims_ignore.txt`. Finally the **LLM-summary sanity check**
   (2026 ATSes run LLM ranking layers): have a model summarize the tailored resume against
   the JD in three sentences; if the intended positioning does not survive the summary, fix
   the resume, not the summary. Full critiques only for roles the owner genuinely cares about.

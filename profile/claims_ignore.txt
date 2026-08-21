@@ -1,0 +1,20 @@
+# claims_ignore.txt: figures claims_check.py should stop asking about.
+#
+# Use this ONLY for numbers that are not claims about your work. Never use it to silence a
+# real claim you cannot support. If a number describes something you did, it belongs in
+# master_skills.md with its basis, not here.
+#
+# Legitimate uses: recurring proper nouns, standards, and idioms specific to your field that
+# the built-in filters miss.
+#
+# Two formats, one per line:
+#   4.8           a literal token, matched exactly as claims_check prints it
+#   /regex/       a regular expression, matched against the whole line
+#
+# Examples (delete these, they are illustrative):
+#   /Six Sigma/
+#   /Series [A-D] funding/
+#   /Part 121/
+#
+# Add entries as you hit false positives. If you find yourself adding many, tell the agent:
+# the built-in filters probably need a fix rather than a workaround.
