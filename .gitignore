@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.pyc
+# render_*.py writes a temporary .html next to the PDF and removes it; ignore strays
+*.html
+# Claude Code local settings
+.claude/settings.local.json
