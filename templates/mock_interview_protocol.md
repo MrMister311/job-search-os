@@ -38,7 +38,7 @@ no-build alternative. Transcript stays in the folder, uncommitted if preferred.
   open_questions.md.
 - Flag any never-say phrase immediately, then continue.
 - **New facts surfaced under pressure go into `master_skills.md` through the metrics gate
-  in the same session**, a fact living only in prep notes reads as unsupported later.
+  in the same session.** A fact living only in prep notes reads as unsupported later.
 
 ## Close-out
 List: answers that drifted from the paper, never-say slips, new facts captured.

@@ -184,9 +184,11 @@ In the terminal only:
 
 Three rules.
 
-1. **The repository stays private.** Check it at any time: on GitHub, your repository page shows
-   "Private" next to the name. If it says Public, go to Settings, scroll to the bottom, and
-   change it.
+1. **The repository stays private.** Check it at any time by running
+   `python3 scripts/privacy_check.py` in your project folder, or by looking at your repository
+   page on GitHub, where it shows "Private" next to the name. If it says Public, go to
+   Settings, scroll to the bottom, and change it. If you forked instead of using the template
+   button, it cannot be changed and you need to redo Step 1.
 2. **Work in local sessions.** The desktop app also offers Cloud sessions, and there is a
    web version at claude.ai/code. Those run on Anthropic's servers rather than your machine,
    and cloud sessions can be shared publicly by accident. Anthropic's own documentation warns

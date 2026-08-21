@@ -99,4 +99,4 @@ them as specific-without-a-number claims, never as hard data.
 
 ## REMOVED CLAIMS: Do Not Use
 
-1. ~~"Reduced inventory shrink by 30% across 40 stores" (Northwind)~~, **Removed 2026-08-11.** Shrink did decline in 2020, but Morgan never saw a before/after figure; the 30% came from a manager's remark and was copied from one resume to the next for three years. No baseline, no method. Not claimable in any form.
+1. ~~"Reduced inventory shrink by 30% across 40 stores" (Northwind)~~ **Removed 2026-08-11.** Shrink did decline in 2020, but Morgan never saw a before/after figure; the 30% came from a manager's remark and was copied from one resume to the next for three years. No baseline, no method. Not claimable in any form.

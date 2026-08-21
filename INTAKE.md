@@ -20,10 +20,10 @@ failures as they appear:
    `git config user.email`. Set them to the owner's name and personal email if empty.
    Commits should be theirs, from a personal account, never a work one.
 3. **Private repository.** This folder will hold employment history, compensation targets,
-   and every application sent. If it is pushed anywhere, the remote must be private.
-   Confirm with `git remote -v` and the hosting provider's visibility setting. If the owner
-   forked rather than using the template button, the copy is permanently public and must be
-   recreated; see `SETUP.md`.
+   and every application sent. Run `python3 scripts/privacy_check.py`. It verifies the remote
+   is private, catches the permanently-public fork case, and looks for tracked credentials.
+   **Do not proceed past this step on a FAIL.** If the owner forked rather than using the
+   template button, the copy cannot be made private and must be recreated; see `SETUP.md`.
 4. **Google Chrome or Chromium**: the PDF renderer drives it headless. If the browser is
    not in a standard location, set `CHROME_PATH` to the binary.
 5. **poppler** (`pdfinfo` + `pdftotext`, used for page counts and the ATS check):

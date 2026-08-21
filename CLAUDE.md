@@ -32,8 +32,11 @@ several years. What actually moves the needle, in order:
    below it). Audit it early.
 2. **One master resume.** Per-application rebuilds are how numbers drift and how
    fabrications creep in. One strong base document, light tailoring.
-3. **Volume and channel.** Cold applications convert at roughly 1–3%. Warm introductions
-   convert far better. Work the network first.
+3. **Volume and channel.** Cold applications convert poorly; warm introductions convert far
+   better. The referral effect is the best-supported finding in hiring research and dwarfs
+   timing or formatting effects. Work the network first. (Specific conversion percentages
+   circulate widely online with no traceable primary source. Treat the direction as solid
+   and any specific number as unverified.)
 4. **Targeting beats tailoring.** Kill bad targets in minutes. Screen hard and early;
    tailor lightly (~15 minutes per application).
 
@@ -116,9 +119,12 @@ are the owner's. Do not screen a single role until `target_roles.md` exists.
   overlap-ranked people search (shared employers, school, city, title adjacency,
   2nd-degree connections), identify the likely hiring manager, draft the outreach note,
   and log every person found or attempted in `profile/contacts.md` (people carry their own
-  follow-up clocks there). A cold application with no human contact is the weakest
-  possible move. At every session start, scan Active rows AND the contacts ledger for
-  overdue clocks.
+  follow-up clocks there). A cold application with no human contact is the weakest possible
+  move. At every session start, scan Active rows AND the contacts ledger for overdue clocks.
+
+**Session start, every time:** scan the clocks above, and run
+`python3 scripts/privacy_check.py` whenever the git remote has changed or the owner is unsure
+whether their copy is private. A FAIL there outranks everything else in this file.
 
 Interview prep happens when an interview is scheduled, not speculatively. When one is
 scheduled: the prep doc includes a **company-reported questions section** (Glassdoor/Blind
@@ -128,9 +134,11 @@ harvest, flagged as anecdotal) and a **mock interview** run from
 
 ### Screening-defense practices (2026 employer-side AI: applies at every level)
 
-- **The voice rule is a survival rule:** ~49% of hiring managers report auto-rejecting
-  AI-sounding applications, and ATS AI-content classifiers exist. Every free-text field
-  gets the owner's voice, drafted from their writing samples.
+- **The voice rule is a survival rule:** roughly half of hiring managers in 2026 surveys
+  report auto-rejecting applications they believe an AI wrote, and ATS vendors shipped
+  AI-content classifiers in late 2025 with acknowledged false positives on careful human
+  writers. Every free-text field gets the owner's voice, drafted from their writing samples.
+  See *Where the numbers come from* below.
 - **LLM screening layers are near-certain at ATS level:** hence Step 3's LLM-summary check.
 - **Consistency checking is automated and cheap:** before any offer-stage background
   check, re-verify LinkedIn has not drifted from `employment_history.md`.
@@ -149,7 +157,7 @@ rules, gate shape, flow, and defense practices do NOT change with level.
 
 | Setting | Early-career / IC | Mid-level | Senior / leadership |
 |---|---|---|---|
-| Resume page limit | **1 page** | 1–2 (judgment) | **2 pages** (executive recruiters prefer it: 482-recruiter study, 2.3x) |
+| Resume page limit | **1 page** | 1–2 (judgment) | **2 pages** (recruiters prefer two pages at director level and above; see below) |
 | Channel emphasis | Direct applications + apply-fast + alumni/community networks | Mixed; warm intros rising | Recruiter inbound + warm intros dominate; cold apps weakest |
 | Comp research | Posted bands + level guides | Percentile framing | Percentile framing + total-comp levers (equity, bonus, title) |
 | Interview prep | Skills/behavioral banks | + role scenarios | + case studies, panels, negotiation depth |
@@ -174,8 +182,39 @@ a lead, not a fact, verify against the company's own ATS before anything enters 
 pipeline; run a weekly monitor once sources are validated; demote or drop any source that
 produces nothing in two sweeps; **diff each monitor run against the prior one** for
 first-seen dates and repost cycles; attach a **ghost-risk note** at screen time (posting
-age, salary posted or not, repost history, an estimated 21–33% of postings are ghosts);
+age, salary posted or not, repost history; a meaningful share of online postings are never
+filled, see below);
 flag fresh postings (≤7 days) for same-week action.
+
+---
+
+## Where the numbers come from
+
+This system claims that every number on a resume must be defensible. The same standard applies
+to the numbers in these instructions. Four of them, with their actual evidentiary weight:
+
+- **Two pages at director level and above.** A ResumeGo simulation (482 recruiters, roughly
+  7,700 resumes) found recruiters 2.3 times more likely to prefer two-page resumes for senior
+  roles, with about double the read time; a Ladders survey of executive recruiters reported 81%
+  preferring two pages for director and above. Vendor-run research, so treat the direction as
+  well supported and the multiplier as approximate. This is why the page limit is a calibration
+  setting rather than a universal rule: the evidence is about senior roles specifically.
+- **Auto-rejection of AI-sounding applications.** Figures around 49% of hiring managers
+  auto-rejecting suspected AI-written resumes circulate in 2026 recruiting coverage
+  (enhancv.com, kraftcv.com, hiretruffle.com), alongside a Robert Half survey reporting 67% of
+  hiring managers saying AI-generated applications slow hiring. These are secondary aggregations
+  of vendor surveys, not peer-reviewed work. The behavior is well attested; the precise share is
+  not. Either way the practical response is the same.
+- **Ghost postings.** MyPerfectResume's analysis of BLS JOLTS data estimates 21 to 33% of
+  2025-26 online postings are never filled. One analysis, one methodology. Enough to justify a
+  ghost-risk note at screen time, not enough to quote as fact.
+- **Cold application conversion rates.** Widely repeated percentages have no traceable primary
+  source. The referral advantage over cold applications is the finding with real academic
+  support behind it; the specific conversion numbers are not, and this system does not state
+  them.
+
+If you are the kind of person who checks, check. Everything above is either cited or explicitly
+marked as unsupported, and that is the standard the rest of the system holds you to.
 
 ---
 
@@ -235,7 +274,7 @@ titles/dates/locations) · `target_roles.md` (comp floor + constraints) · `cont
 scoreboard) · `session_log.md` · `analysis/` (research; see its README)
 
 **Reference layer: `/archive/`.** The owner's historical resumes and reviews go here. **The archive
-is evidence, not truth**, old resumes are where fabricated claims come from. Performance
+is evidence, not truth:** old resumes are where fabricated claims come from. Performance
 reviews outrank resumes. LinkedIn outranks resumes for titles and dates.
 
 **System:** `/agents/`, `/templates/`, `/scripts/`, `/applications/`
