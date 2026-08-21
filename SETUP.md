@@ -26,45 +26,76 @@ any of it.
 
 You also need:
 
-- A **GitHub account** (free) at https://github.com
 - **git** installed. On a Mac it usually already is. On Windows, install Git for Windows from
-  https://git-scm.com, which is required for local sessions on Windows.
+  https://git-scm.com, which is also required for local sessions in the Claude desktop app.
+- A GitHub account is **optional**. It gives you offsite backup and sync between computers.
+  Step 1 covers both paths.
 - macOS 13 or later, or Windows 10 (1809) or later
 
 ---
 
-## Step 1: Make your own private copy
+## Step 1: Get the files
 
-**Do not fork this repository.** A fork of a public repository is permanently public and cannot
-be made private later. Your job search would be visible to anyone, including your employer.
+You do **not** need a GitHub account. Pick one of these two.
 
-Instead:
+### Option A: Download the files (simplest, recommended)
 
 1. Go to https://github.com/MrMister311/job-search-os
-2. Click the green **Use this template** button, then **Create a new repository**
-3. Name it whatever you like, for example `my-job-search`
-4. **Select Private.** This is the important step
+2. Click the green **Code** button, then **Download ZIP**
+3. Unzip it and move the folder somewhere sensible, for example your home folder, renamed to
+   something like `my-job-search`
+
+That is it. Nothing you write is connected to GitHub or visible to anyone.
+
+**Then turn it into a git repository**, which the system uses to track changes and let you
+undo mistakes. This is local only. No account, nothing uploaded. Open Terminal (Mac: press
+Cmd+Space, type "Terminal") or PowerShell (Windows: press Start, type "PowerShell") and run,
+adjusting the folder name:
+
+```
+cd ~/my-job-search
+git init
+git add -A
+git commit -m "Starting point"
+```
+
+If `git` is not installed, get it from https://git-scm.com. On most Macs it is already there.
+
+**What you give up:** if your computer dies, your job search dies with it. If that bothers
+you, do Option B instead, or just copy the folder to a backup drive now and then.
+
+### Option B: Your own private repository on GitHub (adds backup and sync)
+
+Worth it if you want your work backed up offsite or want to use it from more than one
+computer. Requires a free account at https://github.com.
+
+**Do not fork this repository.** A fork of a public repository is permanently public and
+cannot be made private afterward. Your salary history would be visible to anyone, including
+your employer. Use the template button instead, which lets you choose Private:
+
+1. Sign in to GitHub, then go to https://github.com/MrMister311/job-search-os
+2. Click **Use this template**, then **Create a new repository**. If you do not see that
+   button, reload the page, or go straight to
+   https://github.com/MrMister311/job-search-os/generate
+3. Name it, for example `my-job-search`
+4. **Select Private.** This is the step that matters
 5. Click **Create repository**
 
-You now have your own private copy with its own history. Nothing you write in it is connected
-back to the original.
-
-### Get it onto your computer
-
-**If you are comfortable with a terminal**, open Terminal (Mac: press Cmd+Space, type
-"Terminal") or PowerShell (Windows: press Start, type "PowerShell"), then run this, replacing
-`YOUR-USERNAME` and `my-job-search`:
+Then get it onto your computer. Either install GitHub Desktop from https://desktop.github.com,
+sign in, and use **File > Clone repository**; or run this in a terminal, replacing
+`YOUR-USERNAME`:
 
 ```
 cd ~
 git clone https://github.com/YOUR-USERNAME/my-job-search.git
 ```
 
-**If you would rather not use a terminal**, install GitHub Desktop from
-https://desktop.github.com, sign in, and use **File > Clone repository** to pick the repository
-you just created. Note where it saves the folder.
+Verify it is actually private before you put anything real in it:
 
----
+```
+cd ~/my-job-search
+python3 scripts/privacy_check.py
+```
 
 ## Step 2: Install Claude Code
 
@@ -184,11 +215,12 @@ In the terminal only:
 
 Three rules.
 
-1. **The repository stays private.** Check it at any time by running
-   `python3 scripts/privacy_check.py` in your project folder, or by looking at your repository
-   page on GitHub, where it shows "Private" next to the name. If it says Public, go to
-   Settings, scroll to the bottom, and change it. If you forked instead of using the template
-   button, it cannot be changed and you need to redo Step 1.
+1. **If you put it on GitHub, it stays private.** Run `python3 scripts/privacy_check.py` in
+   your project folder any time you are unsure; it tells you what the remote is and whether
+   anything is exposed. On GitHub, your repository page shows "Private" next to the name. If
+   it says Public, go to Settings, scroll to the bottom, and change it. If you forked instead
+   of using the template button, it cannot be changed and you need to redo Step 1. If you took
+   Option A and never touched GitHub, there is nothing to expose.
 2. **Work in local sessions.** The desktop app also offers Cloud sessions, and there is a
    web version at claude.ai/code. Those run on Anthropic's servers rather than your machine,
    and cloud sessions can be shared publicly by accident. Anthropic's own documentation warns

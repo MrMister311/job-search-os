@@ -30,9 +30,10 @@ first session, written for someone who is not a developer.
 
 The short version:
 
-1. Click **Use this template** at the top of this page, then **Create a new repository**, and
-   **select Private**. Do not fork: forks of public repositories are permanently public, and
-   this one will hold your salary history and every application you send.
+1. Get the files. Simplest: **Code > Download ZIP**, unzip, then `git init` inside the
+   folder. No GitHub account needed and nothing is ever uploaded. If you want offsite backup
+   instead, click **Use this template** and **select Private**. Do not fork: forks of public
+   repositories are permanently public, and this will hold your salary history.
 2. Get the folder onto your computer, then open it in Claude Code (terminal or the desktop
    app's Code tab, Environment set to Local).
 3. Say: *"Read CLAUDE.md and INTAKE.md and let's begin intake."*
