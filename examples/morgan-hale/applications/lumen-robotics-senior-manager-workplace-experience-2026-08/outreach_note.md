@@ -1,4 +1,4 @@
-# Outreach note — Priya Natarajan (Lumen Robotics), sent 2026-08-15 via LinkedIn
+# Outreach note: Priya Natarajan (Lumen Robotics), sent 2026-08-15 via LinkedIn
 
 Written in Morgan's voice from her own messages (voice samples collected at intake). 94
 words. One ask, specific; gives context before it asks.

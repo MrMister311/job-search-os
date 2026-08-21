@@ -1,4 +1,4 @@
-"""Render a resume markdown file to a print-ready PDF — the approved 2026 design.
+"""Render a resume markdown file to a print-ready PDF, the approved 2026 design.
 
     python3 scripts/render_resume.py <input.md> <output.pdf> "Full Name"
 

@@ -1,6 +1,6 @@
-# Session Log — Morgan Hale (fictional)
+# Session Log: Morgan Hale (fictional)
 
-## Session 4 — 2026-08-15
+## Session 4: 2026-08-15
 
 **Completed:** Lumen Robotics tailored and sent (three swaps, 1 page, all four checks run;
 outputs in `checks.md`). Warm-path pass done the same session: Priya identified, note sent,

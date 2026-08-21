@@ -1,4 +1,4 @@
-# Pipeline — Morgan Hale (fictional)
+# Pipeline: Morgan Hale (fictional)
 
 Every role screened, applied to, and its status. One row per opportunity.
 

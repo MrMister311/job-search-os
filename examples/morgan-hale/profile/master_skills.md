@@ -1,4 +1,4 @@
-# Master Skills & Experience — Morgan Hale (fictional)
+# Master Skills & Experience: Morgan Hale (fictional)
 
 This is the truth anchor for all resume content. No agent may claim experience not
 documented here. When a job requires something absent from this file, it is flagged as a
@@ -89,7 +89,7 @@ them as specific-without-a-number claims, never as hard data.
 
 ---
 
-## GAPS — Confirmed
+## GAPS: Confirmed
 
 - **Facilities engineering / building systems (HVAC, electrical, capital construction):** never owned; coordinated with a facilities vendor only. Screen around it (gate check 3).
 - **Budget ownership above $1M:** the largest budget owned is the $380K offsite; the consolidation budget was owned by Finance.
@@ -97,6 +97,6 @@ them as specific-without-a-number claims, never as hard data.
 - **CAFM / IWMS administration:** used a desk-booking tool; never administered a full workplace-management platform.
 - **Formal project-management certification:** none.
 
-## REMOVED CLAIMS — Do Not Use
+## REMOVED CLAIMS: Do Not Use
 
-1. ~~"Reduced inventory shrink by 30% across 40 stores" (Northwind)~~ — **Removed 2026-08-11.** Shrink did decline in 2020, but Morgan never saw a before/after figure; the 30% came from a manager's remark and was copied from one resume to the next for three years. No baseline, no method. Not claimable in any form.
+1. ~~"Reduced inventory shrink by 30% across 40 stores" (Northwind)~~, **Removed 2026-08-11.** Shrink did decline in 2020, but Morgan never saw a before/after figure; the 30% came from a manager's remark and was copied from one resume to the next for three years. No baseline, no method. Not claimable in any form.

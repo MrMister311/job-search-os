@@ -1,4 +1,4 @@
-# INTAKE — The First Session
+# INTAKE: The First Session
 
 **Purpose:** build the truth layer. Nothing else in this system works until this exists.
 Expect this to take more than one session; that is normal. Run it as an interview plus
@@ -8,7 +8,7 @@ Before starting, the owner and the agent should both skim `examples/morgan-hale/
 shows what every file below looks like when finished, including how a cleared metric, a
 soft metric, and a removed claim are written.
 
-## Session Zero — Environment Check (run BEFORE any career content)
+## Session Zero: Environment Check (run BEFORE any career content)
 
 The tooling must be proven working on the owner's machine before intake begins, so the
 first render isn't debugged under application-deadline pressure. Run each check and fix

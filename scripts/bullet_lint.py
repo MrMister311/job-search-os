@@ -63,7 +63,7 @@ def main():
                 print(f"      · {f}")
     repeats = [(w, c) for w, c in first_words.items() if c > 2]
     for w, c in repeats:
-        print(f"  · leading verb '{w}' opens {c} bullets — vary the structure")
+        print(f"  · leading verb '{w}' opens {c} bullets, vary the structure")
     if not flags_total and not repeats:
         print("  ✓ clean")
 

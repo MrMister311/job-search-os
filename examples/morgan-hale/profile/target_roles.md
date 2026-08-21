@@ -1,4 +1,4 @@
-# Target Roles, Compensation Floor, and Constraints — Morgan Hale (fictional)
+# Target Roles, Compensation Floor, and Constraints: Morgan Hale (fictional)
 
 - **Compensation floor:** $120K base. Below this the answer is no.
 - **Target range:** $135–150K base. Basis: two posted Portland/remote bands for Senior Manager, Workplace at 400–1,000-person companies ($128–160K) and a level guide putting the 50th percentile near $140K.

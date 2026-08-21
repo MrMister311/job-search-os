@@ -21,7 +21,7 @@ earned.
 
 ## Tertiary Job
 
-Flag any claims that would raise red flags in a phone screen — anything that sounds
+Flag any claims that would raise red flags in a phone screen, anything that sounds
 inflated, inconsistent, or likely to collapse under a follow-up question.
 
 ## Inputs

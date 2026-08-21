@@ -1,4 +1,4 @@
-# Mock Interview Protocol — Template
+# Mock Interview Protocol: Template
 
 Copy into the application folder when an interview is scheduled; run live with the owner
 (30–45 min). The orchestrator plays the interviewer, or spawns the Hiring Manager agent
@@ -12,11 +12,11 @@ with this file and the inputs.
 3. The JD, and the company-reported questions harvest (Glassdoor/Blind, anecdotal).
 
 ## Question priority
-1. **Fit-evaluation gaps** — the likeliest real probes; each needs the bridge shape:
+1. **Fit-evaluation gaps:** the likeliest real probes; each needs the bridge shape:
    acknowledge → adjacent experience → learning path. Never invented experience.
-2. **The paper's most probeable claims** — every number gets its baseline/method/result
+2. **The paper's most probeable claims:** every number gets its baseline/method/result
    walk.
-3. **Stage-type questions** — screens: motivation, timeline, comp; later rounds: scenarios,
+3. **Stage-type questions:** screens: motivation, timeline, comp; later rounds: scenarios,
    values, reservations.
 4. **One curveball.**
 
@@ -38,7 +38,7 @@ no-build alternative. Transcript stays in the folder, uncommitted if preferred.
   open_questions.md.
 - Flag any never-say phrase immediately, then continue.
 - **New facts surfaced under pressure go into `master_skills.md` through the metrics gate
-  in the same session** — a fact living only in prep notes reads as unsupported later.
+  in the same session**, a fact living only in prep notes reads as unsupported later.
 
 ## Close-out
 List: answers that drifted from the paper, never-say slips, new facts captured.

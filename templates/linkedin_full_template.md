@@ -2,7 +2,7 @@
 
 ## Headline
 
-[Title | Value Proposition | Key Differentiator — max 220 characters]
+[Title | Value Proposition | Key Differentiator, max 220 characters]
 [Optimized for recruiter search terms for target role type]
 
 ## About
@@ -11,19 +11,19 @@
 - What you do and why it matters
 - What kind of problems you solve
 - What you're looking for (if actively searching) or what drives you
-- A human touch — something that makes you memorable
+- A human touch, something that makes you memorable
 
 Must include target keywords naturally, not as a keyword dump.]
 
-## Experience — Current Role
+## Experience: Current Role
 
 **[Title] at [Company]**
 [Start Date] - Present
 
-[2-3 sentence context paragraph about the company and your scope — more contextual
+[2-3 sentence context paragraph about the company and your scope, more contextual
 than resume bullets]
 
-- [Achievement bullets — can be slightly more narrative than resume versions]
+- [Achievement bullets, can be slightly more narrative than resume versions]
 - [Match resume content without being identical]
 
 ## Featured Section

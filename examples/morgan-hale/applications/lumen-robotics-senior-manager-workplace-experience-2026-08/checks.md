@@ -1,4 +1,4 @@
-# Checks — real output of the four scripts against these files (run 2026-08-21 from the repo root)
+# Checks: real output of the four scripts against these files (run 2026-08-21 from the repo root)
 
 ```
 $ python3 scripts/claims_check.py examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md --skills examples/morgan-hale/profile/master_skills.md --history examples/morgan-hale/profile/employment_history.md
@@ -24,7 +24,7 @@ $ python3 scripts/ats_check.py /tmp/morgan.pdf examples/morgan-hale/applications
 
 == Job-title alignment: "Senior Manager, Workplace Experience"
    · exact phrase absent; title words in summary region: ['manager', 'workplace', 'experience']
-   ^ echo the JD's title (or its nearest true equivalent) in the summary line —
+   ^ echo the JD's title (or its nearest true equivalent) in the summary line,
      only where the truth anchor supports the seniority the title implies.
 
 == JD keyword coverage vs examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/jd_verbatim.md (information, not a stuffing target)

@@ -1,4 +1,4 @@
-# Tailoring Notes — Lumen Robotics, Senior Manager, Workplace Experience
+# Tailoring Notes: Lumen Robotics, Senior Manager, Workplace Experience
 
 **Date:** 2026-08-14. **Base:** `profile/master_resume.md`. **Time spent:** 14 minutes.
 

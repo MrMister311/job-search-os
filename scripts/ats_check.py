@@ -14,7 +14,7 @@ Checks:
   3. No extraction artifacts: '(cid:', U+FFFD replacement chars, ligature loss
   4. Section headers present (Summary/Experience/Skills-shaped)
   5. With a JD file: top JD terms (unigrams + bigrams, stopword-filtered) and
-     whether each appears in the resume text — coverage is INFORMATION, not a target
+     whether each appears in the resume text. Coverage is INFORMATION, not a target
 """
 import re
 import subprocess
@@ -55,7 +55,7 @@ def main():
     # 1. Volume sanity
     words = tokens(text)
     if len(words) < 200:
-        problems.append(f"only {len(words)} words extracted — text layer may be broken")
+        problems.append(f"only {len(words)} words extracted; text layer may be broken")
     else:
         notes.append(f"extraction OK: {len(words)} words")
 
@@ -67,7 +67,7 @@ def main():
 
     # 3. Artifacts
     if "(cid:" in text:
-        problems.append("'(cid:' artifacts — font lacks a proper ToUnicode map")
+        problems.append("'(cid:' artifacts; font lacks a proper ToUnicode map")
     if "�" in text:
         problems.append("U+FFFD replacement characters in extracted text")
     for lig, plain in [("ﬁ", "fi"), ("ﬂ", "fl")]:
@@ -76,7 +76,7 @@ def main():
     # missing-ligature heuristic: words that lost their fi/fl entirely
     for broken in ["certi cation", "con guration", "work ow", "identi ed", "bene ts"]:
         if broken in text.lower():
-            problems.append(f"broken ligature: '{broken}' — fi/fl dropped during extraction")
+            problems.append(f"broken ligature: '{broken}'; fi/fl dropped during extraction")
 
     # 4. Section headers
     for header in ["summary", "experience", "skills"]:
@@ -106,7 +106,7 @@ def main():
         else:
             hits = [w for w in t_words if w in head]
             print(f"   · exact phrase absent; title words in summary region: {hits or 'NONE'}")
-            print("   ^ echo the JD's title (or its nearest true equivalent) in the summary line —")
+            print("   ^ echo the JD's title (or its nearest true equivalent) in the summary line,")
             print("     only where the truth anchor supports the seniority the title implies.")
 
     # 6. JD keyword coverage

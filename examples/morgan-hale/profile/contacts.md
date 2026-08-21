@@ -1,4 +1,4 @@
-# Contacts — People Ledger (Morgan Hale, fictional)
+# Contacts: People Ledger (Morgan Hale, fictional)
 
 | Person | Company / relevance | Relationship | Last touch | What happened | Next touch due | Status |
 |---|---|---|---|---|---|---|
