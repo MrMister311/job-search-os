@@ -142,60 +142,109 @@ ATS check. You do not need MacPorts. If you already have one of them, use that o
 
 ## Step 2: Install Claude Code
 
-Two ways to run it. Pick one. The desktop app is easier if terminals make you uneasy; the
-terminal version has a few extra features you will probably never need.
+Two ways to run it. Read both before choosing.
 
-### Option A: The Claude desktop app (recommended for beginners)
+| | Desktop app | Terminal |
+|---|---|---|
+| Setup | Download and double-click | One command, then a PATH fix if it does not work |
+| Terminal needed | No | Yes |
+| git required | Yes on Windows, and in practice on a Mac that has never installed developer tools | Not listed as a requirement |
+| Best for | Most people | Anyone stuck on a slow or failing developer-tools download |
 
-1. Download and install Claude for Mac or Windows from https://claude.ai/download
-2. Open it and sign in with your Claude account
+Anthropic's own troubleshooting page puts it plainly: "If you'd rather skip the terminal
+entirely, the Claude Code Desktop app lets you install and use Claude Code through a graphical
+interface." That is the right default. Use the terminal if the desktop app blocks you on git.
+
+### Option A: Desktop app
+
+1. Download from https://claude.ai/download and install it
+2. Open it and sign in. **A paid plan is required.** The free plan cannot run Claude Code
 3. Click the **Code** tab at the top
 4. Set **Environment** to **Local**
-5. Click **Select folder** and choose the folder from Step 1
-6. Pick a permission mode. **Accept edits** is a reasonable start. It applies file changes
-   without asking each time, which matters because this system writes a lot of files
-7. Type your first instruction (see Step 3) and press Enter
+5. Click **Select folder** and pick the folder from Step 1
+6. Choose a permission mode. **Accept edits** is a reasonable start, because this system writes
+   a lot of files and approving each one gets tedious
+7. Type your first instruction (Step 3) and press Enter
 
-The desktop app runs the same engine as the terminal version and reads the same
-`CLAUDE.md` instructions, so everything in this repository works identically.
+**If it refuses to start a local session because git is missing:** on Windows, install Git for
+Windows from https://git-scm.com/download/win and restart the app. On a Mac, git comes from the
+Xcode Command Line Tools, and if that download is slow or stalled, switch to Option B rather
+than waiting.
 
-### Option B: The terminal
+### Option B: Terminal
 
-Open Terminal (Mac) or PowerShell (Windows) and run:
+**Install.** Open Terminal (Mac: press Cmd+Space, type "Terminal") or PowerShell (Windows:
+press Start, type "PowerShell") and run:
 
-**Mac or Linux:**
+**Mac or Linux**
 ```
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Windows PowerShell:**
+**Windows PowerShell**
 ```
 irm https://claude.ai/install.ps1 | iex
 ```
 
-Then check it worked:
+**Verify.**
 ```
 claude --version
 ```
 
-If that prints a version number, you are set. If the command is not found, close and reopen
-your terminal first.
+A working install prints something like `2.1.211 (Claude Code)`.
 
-Now move into your project folder and start it:
+**If you get `zsh: command not found: claude`, that is expected and normal.** It is the most
+common install problem, and it is not a failed install. The installer puts the program at
+`~/.local/bin/claude`, and your shell does not know to look there yet. Fix it:
+
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+claude --version
+```
+
+(On Linux, if your shell is bash, use `~/.bashrc` in both places instead of `~/.zshrc`.)
+
+If it still fails, check whether the program is actually there:
+
+```
+ls -l ~/.local/bin/claude
+```
+
+- **File exists:** PATH is still wrong. Try closing the terminal completely and opening a new
+  one, then run `claude --version` again.
+- **No such file:** the install did not finish, usually a dropped download. Run the install
+  command again and read the output instead of letting it scroll past.
+
+**Start it.** Move into your project folder first, then launch:
 
 ```
 cd ~/my-job-search
 claude
 ```
 
-**Always `cd` into the project folder before running `claude`.** If you run it from your home
-folder instead, it will ask you to confirm trust every single time and will not remember.
+**Always `cd` into the project folder before running `claude`.** Starting it from your home
+folder means the trust prompt comes back every single time and is never remembered.
 
-The first time, it will open a browser to sign in, then ask whether you trust the folder. Say
-yes. In your very first session it asks permission before every change; after that it settles
-into its normal mode.
+### What happens on first launch, in order
 
----
+1. **Login.** A browser opens. Sign in with your Claude account. Credentials are stored, so
+   this happens once
+2. **Trust prompt.** It asks whether you trust the folder. Say yes
+3. **Permission behavior.** In your first session it asks before every change. That is
+   deliberate and only applies to the first session
+
+### Other install errors worth knowing
+
+| What you see | What it means |
+|---|---|
+| `command not found: claude` | PATH. See above. Not a failed install |
+| `syntax error near unexpected token '<'` or a 403 | The download returned a web page instead of the installer. Usually a network or proxy problem. Try again on a different connection |
+| `curl: (56) Failure writing output` | Connection dropped mid-download. Run it again |
+| `irm is not recognized` | You are in CMD, not PowerShell. Your prompt shows `PS C:\` in PowerShell |
+| `Claude Code requires a Pro, Max, Team, or Enterprise subscription` | The free plan does not include Claude Code |
+
+Anthropic's full list is at https://code.claude.com/docs/en/troubleshoot-install
 
 ## Step 3: Your first session
 

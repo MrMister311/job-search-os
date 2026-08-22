@@ -144,6 +144,22 @@ def main():
                      "or Arial. That is a legitimate choice, but make it deliberately: Aptos "
                      "ships with Microsoft Word, or set APTOS_DIR to a folder holding Aptos*.ttf")
 
+    # Claude Code itself: the single most common install failure is PATH, not a bad install
+    local_claude = os.path.expanduser("~/.local/bin/claude")
+    if have("claude"):
+        notes.append(f"Claude Code OK ({run('claude --version')[1] or 'installed'})")
+    elif os.path.exists(local_claude):
+        problems.append("Claude Code is installed but not on your PATH, which is why "
+                        "`claude` reports command not found. The install is fine")
+        fixes.append(('echo \'export PATH="$HOME/.local/bin:$PATH"\' >> ~/.zshrc '
+                      '&& source ~/.zshrc',
+                      'echo \'export PATH="$HOME/.local/bin:$PATH"\' >> ~/.zshrc',
+                      "seconds. Use ~/.bashrc instead of ~/.zshrc if your shell is bash"))
+    else:
+        notes.append("Claude Code not found on PATH. If you have not installed it yet, see "
+                     "SETUP.md step 2. If you have, it may be the PATH problem: check with "
+                     "ls -l ~/.local/bin/claude")
+
     for n in notes:
         print(f"   {n}")
 
