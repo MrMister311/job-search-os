@@ -6,7 +6,7 @@ Every role screened, applied to, and its status. One row per opportunity.
 
 | Role | Company | Comp | Location | Screened | Status | Human contact? | Next action |
 |------|---------|------|----------|----------|--------|----------------|-------------|
-| Senior Manager, Workplace Experience | **Lumen Robotics** (~700 people) | $130–155K posted | Portland hybrid (2 days) | **PASS all 5** (2026-08-14; JD frozen in the app folder; first seen 2026-08-12, salary posted, no repost history: low ghost risk) | **SENT 2026-08-15** (resume_v1, 1 page). Stage dates: screened 08-14, sent 08-15. | **YES**: Priya Natarajan, ex-Northwind colleague, now Lumen's Director of People; outreach note sent 08-15 (see `contacts.md`) | **Follow-up due 2026-08-25** (silent follow-up #1 of max 2) |
+| Senior Manager, Workplace Experience | **Ironwood Robotics** (~700 people) | $130–155K posted | Portland hybrid (2 days) | **PASS all 5** (2026-08-14; JD frozen in the app folder; first seen 2026-08-12, salary posted, no repost history: low ghost risk) | **SENT 2026-08-15** (resume_v1, 1 page). Stage dates: screened 08-14, sent 08-15. | **YES**: Priya Natarajan, ex-Northwind colleague, now Ironwood's Director of People; outreach note sent 08-15 (see `contacts.md`) | **Follow-up due 2026-08-25** (silent follow-up #1 of max 2) |
 
 ## Closed
 
@@ -22,4 +22,4 @@ Every role screened, applied to, and its status. One row per opportunity.
 
 ## Watch List
 
-- Brightline's own Senior Manager, Workplace seat if the director role splits (internal; do not apply externally).
+- Cobalt Health's own Senior Manager, Workplace seat if the director role splits (internal; do not apply externally).

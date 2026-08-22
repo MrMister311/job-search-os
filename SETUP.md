@@ -8,6 +8,8 @@ something does not match, the official docs at https://code.claude.com/docs are 
 
 ---
 
+This project is not legal, financial, or career advice; see [`DISCLAIMER.md`](DISCLAIMER.md).
+
 ## Before you start: what this costs
 
 **Claude Code is not free.** The free Claude.ai plan cannot run it. You need one of:

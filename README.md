@@ -91,6 +91,10 @@ The repo is person-neutral. Copy it fresh (never copy a populated `profile/` or
 `applications/` between people), fill the `[OWNER NAME]` line in `CLAUDE.md`, and run the
 intake. Everything else is set during intake.
 
-## License
+## License and disclaimer
 
-MIT. See `LICENSE`.
+MIT, see [`LICENSE`](LICENSE).
+
+**This is not legal, financial, or career advice**, and employment rules vary by
+jurisdiction. See [`DISCLAIMER.md`](DISCLAIMER.md) before relying on anything here about
+salary history, background checks, recording, or terms of service.

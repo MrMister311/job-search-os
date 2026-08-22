@@ -26,7 +26,14 @@ Warm-up ("walk me through your background," out loud) → role-specific question
 max:** what worked, what to sharpen, which prepared story or cleared number would have
 served better. Coach toward the OWNER'S natural register, never polished-AI cadence.
 
-## Delivery dimension (optional, with explicit consent to record)
+## Delivery dimension (optional, and only with consent)
+
+**Recording:** this section is about recording *yourself* in a practice session, which is
+yours to consent to. Recording a real interview is a different matter: some jurisdictions
+require every participant to consent, and many employers prohibit it regardless. Do not
+record a live interview without checking the rules where you and the other participants are,
+and asking first.
+
 Record and transcribe; score per answer and trend across sessions: filler rate, pace
 (~130–160 wpm conversational), answer duration (behavioral 1.5–2.5 min), vocabulary echo
 (did the JD's key terms appear; flag crutch words 5+ times). Yoodli's free tier is the

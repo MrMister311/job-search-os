@@ -14,7 +14,7 @@ them as specific-without-a-number claims, never as hard data.
 ## Office Consolidation
 
 **Skill/Experience:** Leading an office consolidation program end to end
-**Evidence:** At Brightline Health (2023), owned the consolidation of two Portland offices into one: space planning with the architect, move sequencing over two weekends, vendor coordination (movers, low-voltage, furniture), change communication to every employee, and the lease exit on the second building.
+**Evidence:** At Cobalt Health Partners (2023), owned the consolidation of two Portland offices into one: space planning with the architect, move sequencing over two weekends, vendor coordination (movers, low-voltage, furniture), change communication to every employee, and the lease exit on the second building.
 **Scale:** ~600 employees; 2 leases reduced to 1; 220 desks in the consolidated space
 **Outcome:** Rent reduced by $410K per year. **Basis:** the two lease schedules before and the one after; Finance confirmed the annualized figure in the 2024 budget review. Morgan can walk the math (old rent A + old rent B, minus new rent) in an interview.
 **Metrics Cleared:** Yes
@@ -40,7 +40,7 @@ them as specific-without-a-number claims, never as hard data.
 ## Vendor Management and Contract Negotiation
 
 **Skill/Experience:** Managing a workplace vendor portfolio and renegotiating contracts
-**Evidence:** Owns 14 workplace vendors at Brightline (janitorial, security, snacks, plants, furniture, movers, low-voltage, and others). Renegotiated the janitorial and security contracts at renewal in 2024 using a three-bid process.
+**Evidence:** Owns 14 workplace vendors at Cobalt Health (janitorial, security, snacks, plants, furniture, movers, low-voltage, and others). Renegotiated the janitorial and security contracts at renewal in 2024 using a three-bid process.
 **Scale:** 14 vendors; two contracts renegotiated
 **Outcome:** $86K annual reduction across the two renegotiated contracts. **Basis:** prior contract values versus signed renewals; both documents on file.
 **Metrics Cleared:** Yes
@@ -53,7 +53,7 @@ them as specific-without-a-number claims, never as hard data.
 ## Company Offsite Logistics
 
 **Skill/Experience:** Running a company-wide offsite
-**Evidence:** Logistics lead for Brightline's annual offsite in 2024 and 2025: venue selection, contracting, travel coordination, on-site run-of-show, vendor management.
+**Evidence:** Logistics lead for Cobalt Health's annual offsite in 2024 and 2025: venue selection, contracting, travel coordination, on-site run-of-show, vendor management.
 **Scale:** 450 attendees; $380K budget
 **Outcome:** Delivered on budget both years. The exact variance is not documented, so "on budget" is the claim, never a percentage.
 **Metrics Cleared:** No (scale facts only; no outcome metric claimed)
@@ -66,7 +66,7 @@ them as specific-without-a-number claims, never as hard data.
 ## Team Leadership
 
 **Skill/Experience:** Managing a small workplace team
-**Evidence:** Manages 3 people at Brightline (two workplace coordinators and a front-desk lead). Hired 2 of the 3. Runs weekly 1:1s and the team's on-call rotation for office issues.
+**Evidence:** Manages 3 people at Cobalt Health (two workplace coordinators and a front-desk lead). Hired 2 of the 3. Runs weekly 1:1s and the team's on-call rotation for office issues.
 **Scale:** 3 direct reports
 **Outcome:** **[SOFT METRIC]** Employee workplace-satisfaction comments improved after the consolidation per the annual engagement survey, but the survey changed format between years, so there is no comparable baseline. Write as "improved workplace satisfaction," never as a number.
 **Metrics Cleared:** No

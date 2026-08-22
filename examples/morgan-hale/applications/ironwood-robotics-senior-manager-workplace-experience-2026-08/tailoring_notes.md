@@ -1,4 +1,4 @@
-# Tailoring Notes: Lumen Robotics, Senior Manager, Workplace Experience
+# Tailoring Notes: Ironwood Robotics, Senior Manager, Workplace Experience
 
 **Date:** 2026-08-14. **Base:** `profile/master_resume.md`. **Time spent:** 14 minutes.
 
@@ -16,7 +16,7 @@
    scales" → "Looking to own a multi-office workplace function and its budget." Mirrors
    priorities 2 and 4 in the JD's own terms. Anchor: vendor entry (14 vendors, $86K) and
    team entry.
-2. **Brightline bullet order:** the hybrid-seating bullet moved from second to first, ahead
+2. **Cobalt Health bullet order:** the hybrid-seating bullet moved from second to first, ahead
    of the consolidation. Priority 3 is named three times in the JD; the consolidation still
    lands in the summary. Order only, no text changed.
 3. **Vocabulary:** "three-bid process" → "competitive three-bid process" (the JD says

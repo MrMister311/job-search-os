@@ -178,6 +178,11 @@ Default ranking below is the senior-role pattern; re-rank per the calibration ta
 4. Direct applications (lowest conversion senior; relatively stronger early-career, where
    applying inside the first week matters most, always paired with a human either way)
 
+Respect each site's terms of service when building the playbook: read postings and use
+public search the way a person would, and do not build automated scrapers or bulk-apply bots
+against sites that prohibit them. Cold auto-apply is also the weakest channel in this system,
+so nothing is lost by staying inside the rules.
+
 The *sources* this template was built against (specific boards, VC portfolio boards, search
 slugs) were validated for IT leadership and may not transfer. Build a `profile/sourcing_playbook.md`
 from scratch once the owner's target roles are defined, keeping the *methods*: an aggregator hit is

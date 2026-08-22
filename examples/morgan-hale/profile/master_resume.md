@@ -8,7 +8,7 @@ Workplace operations leader with nine years across corporate and retail operatio
 
 ## Experience
 
-### Workplace Operations Manager, Brightline Health | Portland, OR | Mar 2021 - Present
+### Workplace Operations Manager, Cobalt Health Partners | Portland, OR | Mar 2021 - Present
 
 - Led the consolidation of two Portland offices into one for ~600 employees, from space planning through lease exit, reducing rent by **$410K per year**.
 - Designed a hybrid seating model for 600 employees on 220 desks and rolled out desk booking; 78% of hybrid staff were booking within 90 days.

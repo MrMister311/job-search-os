@@ -1,6 +1,6 @@
-# Senior Manager, Workplace Experience: Lumen Robotics (fictional JD, frozen 2026-08-14)
+# Senior Manager, Workplace Experience: Ironwood Robotics (fictional JD, frozen 2026-08-14)
 
-Lumen Robotics builds warehouse automation. We are ~700 people, headquartered in Portland with
+Ironwood Robotics builds warehouse automation. We are ~700 people, headquartered in Portland with
 a hybrid model (two days a week in office) and small offices in Austin and Raleigh.
 
 **About the role.** You will own the Portland workplace end to end and set the standard for

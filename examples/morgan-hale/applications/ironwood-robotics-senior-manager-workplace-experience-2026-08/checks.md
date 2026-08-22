@@ -1,8 +1,8 @@
-# Checks: real output of the four scripts against these files (run 2026-08-21 from the repo root)
+# Checks: real output of the four scripts against these files (run 2026-08-22 from the repo root)
 
 ```
-$ python3 scripts/claims_check.py examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md --skills examples/morgan-hale/profile/master_skills.md --history examples/morgan-hale/profile/employment_history.md
-== claims check: examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md
+$ python3 scripts/claims_check.py examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md --skills examples/morgan-hale/profile/master_skills.md --history examples/morgan-hale/profile/employment_history.md
+== claims check: examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md
    · UNCLEARED          3  (line 3) Workplace operations leader with nine years across corporate and retail operations. Led a 
    · UNCLEARED        450  (line 12) - Logistics lead for the annual company offsite, 450 attendees on a $380K budget, delivere
    · UNCLEARED      $380K  (line 12) - Logistics lead for the annual company offsite, 450 attendees on a $380K budget, delivere
@@ -14,12 +14,12 @@ $ python3 scripts/claims_check.py examples/morgan-hale/applications/lumen-roboti
    RESULT: PASS (mechanical checks only; the interview test still applies)
 exit=0
 
-$ python3 scripts/render_resume.py examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md /tmp/morgan.pdf "Morgan Hale"
+$ python3 scripts/render_resume.py examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md /tmp/morgan.pdf "Morgan Hale"
 /tmp/morgan.pdf: Pages:           1
 
-$ python3 scripts/ats_check.py /tmp/morgan.pdf examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/jd_verbatim.md "Senior Manager, Workplace Experience"
+$ python3 scripts/ats_check.py /tmp/morgan.pdf examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/jd_verbatim.md "Senior Manager, Workplace Experience"
 == ATS text-layer check: /tmp/morgan.pdf
-   note: extraction OK: 306 words
+   note: extraction OK: 307 words
    ✓ text layer extracts cleanly
 
 == Job-title alignment: "Senior Manager, Workplace Experience"
@@ -27,7 +27,7 @@ $ python3 scripts/ats_check.py /tmp/morgan.pdf examples/morgan-hale/applications
    ^ echo the JD's title (or its nearest true equivalent) in the summary line,
      only where the truth anchor supports the seniority the title implies.
 
-== JD keyword coverage vs examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/jd_verbatim.md (information, not a stuffing target)
+== JD keyword coverage vs examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/jd_verbatim.md (information, not a stuffing target)
    -- top JD terms --
    ✓ workplace  (jd x8)
    ✓ office  (jd x5)
@@ -37,7 +37,7 @@ $ python3 scripts/ats_check.py /tmp/morgan.pdf examples/morgan-hale/applications
    ✓ two  (jd x3)
    ✓ offices  (jd x3)
    ✓ vendor  (jd x3)
-   · lumen  (jd x2)
+   · ironwood  (jd x2)
    · robotics  (jd x2)
    ✓ days  (jd x2)
    ✓ week  (jd x2)
@@ -49,11 +49,11 @@ $ python3 scripts/ats_check.py /tmp/morgan.pdf examples/morgan-hale/applications
    ✓ management  (jd x2)
    ✓ programs  (jd x2)
    ✓ events  (jd x2)
-   absent from resume: people, lumen, robotics, austin
+   absent from resume: people, ironwood, robotics, austin
    ^ absence is only a problem if the truth anchor SUPPORTS the term and the resume merely words it differently.
 
-$ python3 scripts/bullet_lint.py examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md
-== bullet lint: examples/morgan-hale/applications/lumen-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md (9 bullets)
+$ python3 scripts/bullet_lint.py examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md
+== bullet lint: examples/morgan-hale/applications/ironwood-robotics-senior-manager-workplace-experience-2026-08/resume_v1.md (9 bullets)
   [8] Supported store-opening logistics and vendor scheduling for the Portla...
       · weak opener 'supported'
   [9] Front-of-house and events for a coworking space; first exposure to spa...
@@ -73,7 +73,7 @@ $ python3 scripts/bullet_lint.py examples/morgan-hale/applications/lumen-robotic
   words are present. Morgan's summary says "own a multi-office workplace function" rather
   than echoing "Senior Manager, Workplace Experience" because the anchor supports the scope,
   not the title she has never held. That is the right call, and the tool reports it as
-  information. "people / lumen / robotics / austin" absent: company names and a city she has
+  information. "people / ironwood / robotics / austin" absent: company names and a city she has
   no connection to. Ignore.
 - **bullet_lint:** "Supported" is a weak opener on the coordinator bullet. Left in on purpose
   so you can see the flag; in a real pass you would either rewrite it ("Coordinated

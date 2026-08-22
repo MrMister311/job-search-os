@@ -7,8 +7,15 @@ be walkable: the target range traces to researched percentiles, not to want.
 
 ## Standing rules (universal)
 
-1. **Never disclose current compensation.** Many states bar employers from requiring it;
-   volunteering it anchors low. Anchor to the researched target range and the posted band.
+1. **Never disclose current compensation.** Volunteering it anchors you to your past rather
+   than to the role's market value, and once given it cannot be taken back. Anchor to the
+   researched target range and the posted band instead.
+
+   Some jurisdictions restrict whether employers may ask for or rely on salary history, and
+   the rules differ widely by state, city, and country, including whether they cover private
+   employers at all. **Look up your own jurisdiction rather than relying on this file, and
+   treat anything here as a negotiating stance, not a statement of your legal rights.** The
+   practical advice is the same either way: decline politely and redirect to your range.
 2. If an application already stated a range, that number is the anchor of record;
    contradicting your own application is a consistency failure. Negotiate upward via total
    comp, not by moving the stated base.
