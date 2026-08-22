@@ -121,15 +121,21 @@ matters at the end, when the first resume is rendered:
 | Commit history and undo | plus git |
 
 **A warning about the Xcode Command Line Tools on Mac.** That is where git comes from, and it
-is a large download. Running `xcode-select --install` opens a system dialog whose time estimate
-is frequently wrong; on a slow connection it can claim many hours, and it cannot be paused or
-resumed. If that happens to you:
+is a large download. Apple's documentation and Anthropic's both assume you already have it;
+a Mac that has never had it does not really have git, only a stub that triggers this install.
+Running `xcode-select --install` opens a system dialog whose time estimate is frequently wrong.
+On a slow connection it can claim many hours, and it cannot be paused or resumed. If that
+happens to you:
 
 - Cancel it. You are not stuck; git is not needed for the interview
 - Install later from https://developer.apple.com/download/all (search "Command Line Tools",
   free Apple ID). That is a normal .dmg download, which resumes if it drops
 - If `python3 --version` also fails, do not wait on Xcode for it. Install Python directly from
   https://www.python.org/downloads/, a much smaller download
+- **If the Claude desktop app refuses to start a local session without git, use the terminal
+  instead.** Anthropic's setup documentation does not list git as a requirement for the CLI
+  (only for the desktop app on Windows), so `claude` in a terminal is the way around a stalled
+  Xcode download. Option B in Step 2 has the install command
 
 Homebrew is only needed to install poppler, and poppler is only needed for page counts and the
 ATS check. You do not need MacPorts. If you already have one of them, use that one.

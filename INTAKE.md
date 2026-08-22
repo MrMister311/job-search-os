@@ -26,13 +26,19 @@ blocks you today:
 | `ats_check.py` | plus poppler |
 | Commit history and undo | plus git |
 
-**On a Mac, git comes from the Xcode Command Line Tools**, and that download is large. The
-installer dialog is not resumable and its time estimate is often wrong; on a weak connection
-it can claim hours. If that happens: cancel it, carry on with intake, and install later from
+**On a Mac, git comes from the Xcode Command Line Tools**, and that download is large. A Mac
+that has never installed them does not really have git, only a stub that triggers the install,
+which is why guidance saying "most Macs include git" can mislead. The installer dialog is not
+resumable and its time estimate is often wrong; on a weak connection it can claim hours. If
+that happens: cancel it, carry on with intake, and install later from
 https://developer.apple.com/download/all (search "Command Line Tools", free Apple ID), which
-gives a resumable .dmg. If `python3` is also missing, do not wait on Xcode for it either;
-install Python directly from https://www.python.org/downloads/, which is a much smaller
-download.
+gives a resumable .dmg.
+
+**If the Claude desktop app refuses to open a local session without git**, use the terminal
+version instead: `curl -fsSL https://claude.ai/install.sh | bash`, then `cd` into this folder
+and run `claude`. Anthropic's setup documentation lists no git requirement for the CLI; the
+documented requirement is for the desktop app on Windows. If `python3` is missing too, install
+Python from https://www.python.org/downloads/ rather than waiting on Xcode.
 
 Homebrew is only needed to install poppler. You do not need MacPorts. Pick one, and these
 instructions assume Homebrew.

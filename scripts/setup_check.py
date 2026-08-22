@@ -77,8 +77,13 @@ def main():
             fixes.append((
                 "xcode-select --install",
                 None,
-                "10 to 40 minutes. A system dialog appears; click Install and WAIT. The "
-                "progress bar stalls near the end and that is normal. Do not close it."))
+                "10 minutes to several hours depending on your connection, and it cannot be "
+                "paused or resumed. If the dialog quotes hours, cancel it and download the "
+                "resumable .dmg from https://developer.apple.com/download/all instead (search "
+                "\"Command Line Tools\", free Apple ID). You do NOT need this to start intake: "
+                "it only provides git, for commit history. If the Claude desktop app refuses a "
+                "local session without git, use the terminal version of Claude Code, which "
+                "does not require it."))
         else:
             notes.append("Xcode Command Line Tools OK")
 
