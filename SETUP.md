@@ -41,7 +41,8 @@ You do **not** need a GitHub account. Pick one of these two.
 ### Option A: Download the files (simplest, recommended)
 
 1. Go to https://github.com/MrMister311/job-search-os
-2. Click the green **Code** button, then **Download ZIP**
+2. Click the green **Code** button (the one above the file list, not the "Code" tab at the
+   top of the page), then **Download ZIP**
 3. Unzip it and move the folder somewhere sensible, for example your home folder, renamed to
    something like `my-job-search`
 
@@ -74,9 +75,9 @@ cannot be made private afterward. Your salary history would be visible to anyone
 your employer. Use the template button instead, which lets you choose Private:
 
 1. Sign in to GitHub, then go to https://github.com/MrMister311/job-search-os
-2. Click **Use this template**, then **Create a new repository**. If you do not see that
-   button, reload the page, or go straight to
-   https://github.com/MrMister311/job-search-os/generate
+2. Click **Use this template**, then **Create a new repository**. The button only appears
+   when you are signed in to GitHub. If you do not see it, sign in and reload, or go straight
+   to https://github.com/MrMister311/job-search-os/generate
 3. Name it, for example `my-job-search`
 4. **Select Private.** This is the step that matters
 5. Click **Create repository**
@@ -96,6 +97,42 @@ Verify it is actually private before you put anything real in it:
 cd ~/my-job-search
 python3 scripts/privacy_check.py
 ```
+
+## Step 1b: Check your tooling (and what you can skip)
+
+From your project folder, run:
+
+```
+python3 scripts/setup_check.py
+```
+
+It lists what is installed, what is missing, the exact command for each fix, and roughly how
+long each takes.
+
+**You do not need all of it to start.** The intake interview needs nothing installed. Tooling
+matters at the end, when the first resume is rendered:
+
+| To do this | You need |
+|---|---|
+| The whole intake interview | nothing |
+| Render a resume or cover letter to PDF | Python 3.10+ and Google Chrome |
+| Automatic page count after rendering | plus poppler |
+| `ats_check.py` | plus poppler |
+| Commit history and undo | plus git |
+
+**A warning about the Xcode Command Line Tools on Mac.** That is where git comes from, and it
+is a large download. Running `xcode-select --install` opens a system dialog whose time estimate
+is frequently wrong; on a slow connection it can claim many hours, and it cannot be paused or
+resumed. If that happens to you:
+
+- Cancel it. You are not stuck; git is not needed for the interview
+- Install later from https://developer.apple.com/download/all (search "Command Line Tools",
+  free Apple ID). That is a normal .dmg download, which resumes if it drops
+- If `python3 --version` also fails, do not wait on Xcode for it. Install Python directly from
+  https://www.python.org/downloads/, a much smaller download
+
+Homebrew is only needed to install poppler, and poppler is only needed for page counts and the
+ATS check. You do not need MacPorts. If you already have one of them, use that one.
 
 ## Step 2: Install Claude Code
 

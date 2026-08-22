@@ -8,45 +8,53 @@ Before starting, the owner and the agent should both skim `examples/morgan-hale/
 shows what every file below looks like when finished, including how a cleared metric, a
 soft metric, and a removed claim are written.
 
-## Session Zero: Environment Check (run BEFORE any career content)
+## Session Zero: Environment Check
 
-The tooling must be proven working on the owner's machine before intake begins, so the
-first render isn't debugged under application-deadline pressure. Run each check and fix
-failures as they appear:
+**Do not let this block intake.** The interview below needs nothing installed. Tooling is only
+needed at the end, when the first resume gets rendered. If a download is slow or a connection
+is bad, note what is missing, start the interview, and come back to this.
 
-1. **Python 3**: `python3 --version` (3.10+; the scripts are stdlib-only, no pip installs).
-   On a fresh Mac this may prompt to install Command Line Tools; accept.
-2. **git**: `git --version`, then confirm identity: `git config user.name` and
-   `git config user.email`. Set them to the owner's name and personal email if empty.
-   Commits should be theirs, from a personal account, never a work one.
-3. **Private repository.** This folder will hold employment history, compensation targets,
-   and every application sent. Run `python3 scripts/privacy_check.py`. It verifies the remote
-   is private, catches the permanently-public fork case, and looks for tracked credentials.
-   **Do not proceed past this step on a FAIL.** If the owner forked rather than using the
-   template button, the copy cannot be made private and must be recreated; see `SETUP.md`.
-4. **Google Chrome or Chromium**: the PDF renderer drives it headless. If the browser is
-   not in a standard location, set `CHROME_PATH` to the binary.
-5. **poppler** (`pdfinfo` + `pdftotext`, used for page counts and the ATS check):
-   `pdftotext -v`. If missing: `brew install poppler` (macOS) or
-   `apt install poppler-utils` (Debian/Ubuntu).
-6. **Fonts**: the design spec is Aptos, which the renderer loads from Microsoft Word's
-   app bundle on macOS (or from `APTOS_DIR` if set). If Word is not installed, the render
-   silently falls back (Calibri → Helvetica Neue → Arial). **Check which font actually
-   rendered** in the test PDF below; if it fell back, either install Office, source Aptos
-   another way, or consciously re-approve the fallback as the owner's design choice.
-   Never let the font change silently.
-7. **End-to-end render test**: render `templates/base_resume.md` through
-   `scripts/render_resume.py` from the repo root, confirm a PDF appears with a page count
-   printed, open it, and check the font and layout. Then run `scripts/ats_check.py` on the
-   test PDF to confirm extraction works (the placeholder template will report missing contact fields; that is expected). `scripts/claims_check.py templates/base_resume.md` should FAIL loudly on the placeholder numbers; that is the gate working.
-8. **Claude Code setup**: a local session (CLI, desktop app, or IDE extension) opened on
-   this folder, under the owner's own account and OS user.
-9. **Optional**: the Claude in Chrome extension, only if the sourcing playbook ends up
-   using browser-only job boards (some are invisible to plain fetching). Defer until
-   channel research says it's needed.
+Run `python3 scripts/setup_check.py`. It reports what is present, what is missing, the exact
+command to fix each one, and how long each takes. Then use this table to decide what actually
+blocks you today:
 
-Session Zero is done when a test PDF rendered in the intended font, the checks all pass,
-and the repo has the owner's git identity on a first commit.
+| To do this | You need |
+|---|---|
+| The whole intake interview | nothing |
+| Render a resume or cover letter to PDF | Python 3.10+ and Google Chrome |
+| Automatic page count after rendering | plus poppler |
+| `ats_check.py` | plus poppler |
+| Commit history and undo | plus git |
+
+**On a Mac, git comes from the Xcode Command Line Tools**, and that download is large. The
+installer dialog is not resumable and its time estimate is often wrong; on a weak connection
+it can claim hours. If that happens: cancel it, carry on with intake, and install later from
+https://developer.apple.com/download/all (search "Command Line Tools", free Apple ID), which
+gives a resumable .dmg. If `python3` is also missing, do not wait on Xcode for it either;
+install Python directly from https://www.python.org/downloads/, which is a much smaller
+download.
+
+Homebrew is only needed to install poppler. You do not need MacPorts. Pick one, and these
+instructions assume Homebrew.
+
+Two things `setup_check.py` cannot decide for you:
+
+1. **Private repository, if you used one.** Run `python3 scripts/privacy_check.py`. It verifies
+   the remote is private, catches the permanently-public fork case, and looks for tracked
+   credentials. **Do not put real career data in a repository that fails this.** If you
+   downloaded the ZIP and never touched GitHub, there is nothing to expose.
+2. **Fonts.** The design spec is Aptos, which ships with Microsoft Word. Without it the render
+   silently falls back to Calibri, then Helvetica or Arial. Check which font actually rendered
+   in the test PDF below. A fallback is a fine choice; a silent one is not.
+
+**End-to-end test, once the tooling is in place:** render `templates/base_resume.md` through
+`scripts/render_resume.py`, open the PDF, check the font and layout. Then run
+`scripts/ats_check.py` on it. The placeholder template will report missing contact fields;
+that is expected. `scripts/claims_check.py templates/base_resume.md` should FAIL loudly on the
+placeholder numbers; that is the gate working.
+
+**Claude Code setup:** a local session (CLI, desktop app, or IDE extension) opened on this
+folder, under the owner's own account and OS user. See `SETUP.md`.
 
 ## What is in profile/ before you begin
 
